@@ -73,6 +73,13 @@ body {
   color: var(--card-bgcolor);
   width: max-content;
 }
+.cards__btn:hover,
+.cards__btn:focus {
+  background-color: transparent;
+  border: 2px solid white;
+  color: var(--clr-trans-white);
+}
+
 .orange .cards__img {
   background-image: url(./images/icon-sedans.svg);
 }
