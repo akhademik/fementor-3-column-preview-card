@@ -1,0 +1,107 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+body {
+  /* COLOR  */
+  --clr-bright-orange: hsl(31, 77%, 52%);
+  --clr-dark-cyan: hsl(184, 100%, 22%);
+  --clr-very-dark-cyan: hsl(179, 100%, 13%);
+
+  --clr-trans-white: hsla(0, 0%, 100%, 0.75);
+  --clr-light-gray: hsl(0, 0%, 95%);
+
+  /* FONTS */
+  --ft-big-shoulders: "Big Shoulders Display", cursive; /*700*/
+  --ft-lexend: "Lexend Deca", sans-serif; /*400*/
+
+  /* GLOBAL SET  */
+  margin: 0;
+  font-family: var(--ft-lexend);
+  color: var(--clr-trans-white);
+
+  --sz-border-radius: 0.5rem;
+}
+.wrapper {
+  margin: 2rem;
+  margin-top: calc(100vh -30%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cards {
+  --card-bgcolor: ;
+  background-color: var(--card-bgcolor);
+  padding: 3rem;
+  max-width: 25em;
+  border-radius: var(--sz-border-radius);
+  line-height: 1.8rem;
+}
+.orange {
+  --card-bgcolor: var(--clr-bright-orange);
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.blue {
+  --card-bgcolor: var(--clr-dark-cyan);
+  border-radius: 0;
+}
+.dark_blue {
+  --card-bgcolor: var(--clr-very-dark-cyan);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.cards__img {
+  background-repeat: no-repeat;
+  height: 40px;
+  margin-bottom: 3rem;
+}
+.cards__header {
+  font-family: var(--ft-big-shoulders);
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+.cards__btn {
+  background-color: var(--clr-light-gray);
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 1em 2em;
+  border-radius: 3em;
+  outline: none;
+  border-color: transparent;
+  /* margin-bottom: 1rem; */
+  color: var(--card-bgcolor);
+  width: max-content;
+}
+.orange .cards__img {
+  background-image: url(./images/icon-sedans.svg);
+}
+.blue .cards__img {
+  background-image: url(./images/icon-suvs.svg);
+}
+.dark_blue .cards__img {
+  background-image: url(./images/icon-luxury.svg);
+}
+
+/* DESKTOP SIZE */
+@media (min-width: 40em) {
+  .wrapper {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .orange {
+    border-bottom-left-radius: var(--sz-border-radius);
+    border-top-right-radius: 0;
+  }
+  .dark_blue {
+    border-bottom-left-radius: 0;
+    border-top-right-radius: var(--sz-border-radius);
+  }
+  .cards {
+    /* min-height: 100vh; */
+    height: max-content;
+  }
+}
